@@ -1,0 +1,57 @@
+.myBtn{
+    text-align: right;
+}
+.assembleTable th{
+    text-align: center;
+}
+label{
+    height: 40px;
+    line-height: 40px;
+}
+.myInput{
+    height: 40px;!important;
+}
+.myLeft{
+    padding-left: 0;
+}
+textarea{
+    resize: none;
+}
+.col-xs-4{
+    text-align: left;
+}
+.col-xs-6 {
+    padding-right: 0;
+    text-align: left;
+}
+.col-xs-8 {
+    padding-right: 0;
+    text-align: left;
+}
+.col-xs-1 {
+    padding-right: 0;
+    text-align: right;
+}
+.myBtn{
+    text-align: right;
+}
+.add{
+    color: white;
+}
+.add:hover{
+    color: white;
+}
+#myTbody tr td{
+    text-align: center;
+}
+.myDelete{
+    cursor: pointer;
+    color: red;
+
+}
+.titleLeft{
+    text-align: left;
+}
+.myLeft{
+    padding-left: 0;
+}

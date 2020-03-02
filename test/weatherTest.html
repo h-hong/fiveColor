@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="item t2">
+    <div class="item-con">
+        <div class="title-div">
+            <div class="time-title">{{nowDate}}</div>
+            <div class="other-div">
+                <div id="address-title" class="address-title">{{city}}</div>
+                <div class="ampm-title">{{ampm}}</div>
+            </div>
+        </div>
+        <div class="weather-div">
+            <div class="w-item" ng-repeat="item in weatherList">
+                <div class="day">{{item.day}}</div>
+                <div class="type">{{item.type}}</div>
+                <div class="temperature">{{item.temperature}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 高德地图所需 -->
+<!-- 放在jquery前解决AMap is not defined 冲突 -->
+<script type="text/javascript" charset="utf-8" src="http://webapi.amap.com/maps?v=1.3&key=xxxxxx&plugin=AMap.Autocomplete,AMap.PlaceSearch"></script>
+<!-- 高德地图所需 -->
+<script src="../jquery/jquery-3.4.1.js"></script>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    /*获取天气参数*/
+    function refreshWeather() {
+        jQuery.support.cors = true;
+        var url = encodeURI("http://wthrcdn.etouch.cn/weather_mini?city=" + $scope.city);
+        $.get({
+            url: url,
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                var list = data.data.forecast;
+                if (list.length < 3) {
+                    return;
+                }
+                var wList = [];
+                for (var i = 0; i < 3; i++) {
+                    var item = list[i];
+                    var high = item.high.split(" ")[1];
+                    var low = item.low.split(" ")[1];
+                    wList.push({
+                        day: item.date.slice(-3),
+                        type: item.type,
+                        temperature: high + "/" + low
+                    });
+                }
+                $scope.$apply(function () {
+                    $scope.weatherList = wList;
+                });
+            }
+        });
+    }
+
+    /*获取当前时间*/
+    function refreshDate() {
+        var nowDate = new Date();
+        var h = nowDate.getHours();
+        $scope.$apply(function () {
+            $scope.nowDate = zero(hours(h)) + "." + zero(nowDate.getMinutes());
+            $scope.ampm = h < 12 ? "AM" : "PM";
+        });
+
+        function hours(value) {
+            return value % 12;
+        }
+
+        function zero(str) {
+            str = "" + str;
+            if (str.length === 1) {
+                str = "0" + str;
+            }
+            return str;
+        }
+    }
+
+    /*获取本地城市地址--高德地图api*/
+    function refreshLocalCity(complete) {
+        AMap.plugin('AMap.CitySearch', function () {
+            new AMap.CitySearch().getLocalCity(function (status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    $scope.$apply(function () {
+                        $scope.city = result.city;
+                    });
+                    complete && complete();
+                }
+            })
+        });
+    }
+</script>
+</body>
+</html>

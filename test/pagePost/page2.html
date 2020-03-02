@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面2</title>
+    <style>
+        #id1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+        #id2{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+    window.onload = function () {
+        console.log(window.location.href);
+        let url = window.location.href.split('id=');
+        console.log(url);
+        function goHash(hash) {
+            // console.log(hash);
+            return hash;
+        }
+
+
+        var gysID=goHash(url[1]);
+
+
+        console.log(gysID);
+    }
+</script>
+</html>

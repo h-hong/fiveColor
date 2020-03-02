@@ -1,0 +1,55 @@
+@media (max-width: 600px) {
+    .marginTop {
+        margin-top: 10px;
+        float: left !important;
+    }
+}
+
+.fr {
+    float: right;
+}
+.clear {
+    overflow: hidden;
+}
+#seleLv,
+#addSteInput{
+    height: 38px;
+    margin-right: 10px;
+}
+#addSteInput {
+    padding-left: 10px;
+}
+#seleLv {
+    padding: 0 20px;
+}
+.card-body dt,
+.card-body dd {
+    height: 24px;
+}
+.card-body dt {
+    box-sizing: content-box;
+    padding-top: 10px;
+    padding-bottom: 4px;
+    margin-top: 10px;
+    border-top: 1px solid #cccccc;
+}
+.card-body dt span {
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    width: 18px;
+    color: #990c09;
+    font-size: 18px;
+    cursor: pointer;
+}
+.card-body dd{
+    display: inline-block;
+    margin-left: 30px;
+}
+.checkInput input{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}

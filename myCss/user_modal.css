@@ -1,0 +1,97 @@
+.moda {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.12);
+    display: none;
+}
+.moda>div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+.moda-box {
+    width: 40%;
+    padding: 20px 20px;
+}
+.moda>div .form label {
+    width: 20%;
+    margin: 0;
+    text-align: center;
+}
+.moda>div .form>div {
+    margin-bottom: 20px;
+}
+.moda>div .form input{
+    width: 75%;
+    height: 40px;
+    border: 1px solid #cccccc;
+}
+.moda>div .form select {
+    width: auto;
+    padding: 0 2%;
+    margin: 0;
+}
+.moda>div .form input {
+    padding-left: 4px;
+}
+.moda>div .form select {
+    text-align: center;
+    text-align-last: center;
+}
+option{
+    text-align:center;
+}
+.form>div:last-of-type {
+    overflow: hidden;
+    margin: 20px;
+    padding: 0 10%;
+}
+.form>div:last-of-type>div{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.form>div:last-of-type>div a {
+    display: inline-block;
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.form>div:last-of-type>div:first-of-type a{
+    color: #ffffff;
+    background-color: #f96868;
+}
+.form>div:last-of-type>div:last-of-type a {
+    color: #ffffff;
+    background-color: #33cabb;
+}
+.form>div:last-of-type>div:first-of-type a:hover {
+    color: #FFFFFF;
+    background-color: #ff2c37;
+ }
+.form>div:last-of-type>div:last-of-type a:hover {
+    color: #FFFFFF;
+    background-color: #98d4ff;
+
+}
+@media (max-width: 800px) {
+    .moda>div {
+        width: 100%;
+    }
+}
+.modal-box1 {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    text-align: center;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>首页 - 五月七彩(Five Months Seven Color)后台管理系统</title>
+    <link rel="icon" href="../myImg/mytitle.jpg" type="image/ico">
+    <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+    <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+    <meta name="author" content="Five Months Seven Color Team">
+    <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../sysytem/css/animate.css" rel="stylesheet">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+    <link href="../sysytem/js/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../myCss/user_admin.css">
+    <!--模态框-->
+    <link rel="stylesheet" href="../myCss/user_modal.css">
+</head>
+<body>
+<div class="container-fluid p-t-15">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header"><h4>账号列表</h4></div>
+                <div class="card-body form-admin">
+                    <div>
+                        <input type="text" id="selName" placeholder="输入姓名查询">
+                        <button class="btn btn-primary" id="selBtn" type="submit">搜索</button>
+                        <button id="btn_delete" type="button" class="btn btn-danger fr">
+                            <span class="mdi mdi-window-close" aria-hidden="true"></span>删除
+                        </button>
+                        <button id="btn_add" type="button" class="btn btn-primary m-r-5 fr">
+                            <span class="mdi mdi-plus" aria-hidden="true"></span>新增
+                        </button>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" id = "allCheck"/></th>
+                            <th>ID</th>
+                            <th>姓名</th>
+                            <th>账号</th>
+                            <th>电话号码</th>
+                            <th>等级权限</th>
+                            <th>创建时间</th>
+                            <th>最近登陆时间</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <nav>
+                        显示
+                        <select name="" id="getNumber">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                        </select>
+                        条
+                        <ul class="pager">
+                            <li><a href="javascript:getTop();">上一页</a></li>
+                            <li><a href="javascript:getLast();">下一页</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-->
+<div class="moda" id="exampleModal">
+    <div class="moda-box">
+        <h3>修改</h3>
+        <div class="form">
+            <div>
+                <label for="idModal">账号:</label><input type="text" id="idModal" disabled="disabled" value="1111111">
+            </div>
+            <div>
+                <label for="nameModal">姓名:</label><input type="text" id="nameModal" value="华盛顿">
+            </div>
+            <div>
+                <label for="pwdModal">密码:</label><input type="text" id="pwdModal" value="华盛顿">
+            </div>
+            <div>
+                <label>权限:</label><select name="lvModal" id="lvModal">
+                    <option value="0">--选择权限--</option>
+                    <option value="1">超级管理员</option>
+                    <option value="2">普通管理员</option>
+                </select>
+            </div>
+            <div>
+                <div><a id="trueExample">确定</a></div>
+                <div><a id="falseExample">取消</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moda" id="addModal">
+    <div class="moda-box">
+        <h3>添加</h3>
+        <div class="form">
+            <div>
+                <label for="addIdModal">账号:</label><input type="text" id="addIdModal" disabled="disabled" value="">
+            </div>
+            <div>
+                <label for="addNameModal">姓名:</label><input type="text" id="addNameModal" value="" placeholder="请输入2-6位汉字">
+            </div>
+            <div>
+                <label for="addPwdModal">密码:</label><input type="text" id="addPwdModal" value="" placeholder="设置初始3-6位密码">
+            </div>
+            <div>
+                <label>权限:</label><select name="addLvModal" id="addLvModal">
+                <option value="0">--选择权限--</option>
+                <option value="1">超级管理员</option>
+                <option value="2">普通管理员</option>
+            </select>
+            </div>
+            <div>
+                <div><a id="trueAdd">确定</a></div>
+                <div><a id="falseAdd">取消</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moda" id="exampleModa2">
+    <div class="moda-box">
+        <h3>详情</h3>
+        <div class="form">
+            <div>
+                <ul id="userP">
+                    <!--<li><p>账号:</p></li>-->
+                </ul>
+            </div>
+            <div>
+                <div><a id="trueLook">确定</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moda" id="yesModal">
+    <div class="modal-box modal-box1">
+        成功
+    </div>
+</div>
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap-table/bootstrap-table.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+<script src="../myJs/Authority/date_Authority.js"></script>
+<!--<script src="../date/dateItem.js"></script>-->
+<script src="../myJs/Authority/admin.js"></script>
+</body>
+</html>

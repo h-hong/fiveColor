@@ -1,0 +1,23 @@
+.example-box{
+    margin-bottom: 10px;
+}
+.row>.card-body {
+    padding-left: 15px;
+}
+.input-group .form-control {
+    z-index: 0;
+}
+ul,
+li {
+    list-style: none;
+}
+.cur {
+    cursor: pointer;
+}
+.cur:hover {
+    background-color: #dcdcdc;
+}
+#userP span{
+    display: inline-block;
+    width: 20%;
+}

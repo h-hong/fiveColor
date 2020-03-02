@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>供应商商品 - 五月七彩(Five Months Seven Color)后台管理系统</title>
+    <link rel="icon" href="../myImg/mytitle.jpg" type="image/ico">
+    <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+    <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+    <meta name="author" content="Five Months Seven Color Team">
+    <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../myCss/supplier_GysGoodList.css">
+</head>
+<body>
+    <div class="container-fluid p-t-15">
+        <div class="card">
+            <div class="card-body">
+                <div class="t_head">
+                    <span>供应商管理 / 商品列表</span>
+                </div>
+                <button class="addbtn btn-primary">增加</button>
+                <table class="table " id="tableBorder">
+                    <thead>
+                        <tr>
+                            <th>商品编码</th>
+                            <th>商品名称</th>
+                            <th>商品成本</th>
+                            <th>商品数量</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+
+
+                </table>
+
+                <!--增加的模态框-->
+                <div class="modal addfade" id="addmodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <i>X</i>
+                                <h4>增加</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    商品编码：<input type="text" />
+                                </p>
+                                <p>
+                                    商品名称：<input type="text" />
+                                </p>
+                                <p>
+                                    商品成本：<input type="text" />
+                                </p>
+                                <p>
+                                    商品数量：<input type="text" />
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="addbtn_ok">确定</button>
+                                <button class="addbtn_no">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--修改的模态框-->
+                <div class="modal movefade movemodal" id="movemodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <i>X</i>
+                                <h4>修改</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    商品编码：<input type="text" disabled="disabled" style="background-color: #ccc;" />
+                                </p>
+                                <p>
+                                    商品名称：<input type="text" />
+                                </p>
+                                <p>
+                                    商品成本：<input type="text" />
+                                </p>
+                                <p>
+                                    商品数量：<input type="text" />
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="addbtn_ok2">确定</button>
+                                <button class="addbtn_no">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+    <!--标签插件-->
+    <script src="../sysytem/js/jquery-tags-input/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="../sysytem/js/main.min.js"></script>
+
+    <script src="../myJs/Suppiler/addGoodItem.js"></script>
+    <!--<script src="../date/dateItem.js"></script>-->
+</body>
+</html>

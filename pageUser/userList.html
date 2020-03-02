@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>首页 - 五月七彩(Five Months Seven Color)后台管理系统</title>
+    <!--<link rel="icon" href="images/title.png" type="image/ico">-->
+    <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+    <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+    <meta name="author" content="Five Months Seven Color Team">
+    <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../sysytem/css/animate.css" rel="stylesheet">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+    <link href="../sysytem/js/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../myCss/user_userList.css">
+    <link rel="stylesheet" href="../myCss/user_modal.css">
+    <!--日期选择插件-->
+    <link rel="stylesheet" href="../sysytem/js/bootstrap-datepicker/bootstrap-datepicker3.min.css">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../myCss/user_admin.css">
+
+</head>
+<body>
+<div class="container-fluid p-t-15">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header"><h4>用户列表</h4></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="card-body col-xs-2">
+                            <input type="text" class="form-control" id="setUserID" placeholder="账号">
+                        </div>
+                        <div class="card-body col-xs-2 ">
+                            <button class="btn btn-primary" type="submit" id="userSelBtn">查询</button>
+                        </div>
+                        <div class="card-body fr">
+                            <button id="btn_delete" type="button" class="btn btn-danger ">
+                                <span class="mdi mdi-window-close" aria-hidden="true"></span>删除
+                            </button>
+                        </div>
+                    </div>
+                    <div class="example-box">
+                        <label class="lyear-radio radio-inline radio-primary" >
+                            <input type="radio" id="scoreTop" name="e"><span>积分<i class="mdi mdi-apple-keyboard-control"></i></span>
+                        </label>
+                        <label class="lyear-radio radio-inline radio-primary" >
+                            <input type="radio" id="scoreB" name="e"><span>积分<i class="mdi mdi-chevron-down"></i></span>
+                        </label>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" id="allUserCheck"/></th>
+                            <th>编号</th>
+                            <th>账号</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>电话</th>
+                            <th>邮箱</th>
+                            <th>积分</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pager">
+                            <li><a href="javascript:;" onclick="getTo();">上一页</a></li>
+                            <li><a href="javascript:;" onclick="getLa()">下一页</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moda" id="yesModal">
+    <div class="modal-box modal-box1">
+        成功
+    </div>
+</div>
+<div class="moda" id="exampleModal">
+    <div class="moda-box">
+        <h3>修改</h3>
+        <div class="form">
+            <div>
+                <label for="idModal">账号:</label><input type="text" id="idModal" disabled="disabled" value="1111111">
+            </div>
+            <div>
+                <label for="pwdModal">密码:</label><input type="password" id="pwdModal" value="华盛顿">
+            </div>
+            <div>
+                <div><a id="trueExample">确定</a></div>
+                <div><a id="falseExample">取消</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moda" id="exampleModa2">
+    <div class="moda-box">
+        <h3>详情</h3>
+        <div class="form">
+            <div>
+                <ul id="userP">
+                    <!--<li><p>账号:</p></li>-->
+                </ul>
+            </div>
+            <div>
+                <div><a id="trueLook">确定</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+<!--日期选择插件-->
+<script src="../sysytem/js/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="../sysytem/js/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/main.min.js"></script>
+<script src="../myJs/Authority/date_Authority.js"></script>
+<!--<script src="../date/dateItem.js"></script>-->
+<script src="../myJs/User/user.js"></script>
+</body>
+</html>

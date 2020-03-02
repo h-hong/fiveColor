@@ -1,0 +1,44 @@
+
+.assembleTable th{
+    text-align: center;
+}
+label{
+    height: 40px;
+    line-height: 40px;
+}
+.myInput{
+    height: 40px;!important;
+}
+.col-xs-4{
+    text-align: left;
+}
+.col-xs-6 {
+    padding-right: 0;
+}
+.col-xs-8 {
+    padding-right: 0;
+}
+.col-xs-1 {
+    padding-right: 0;
+    text-align: right;
+}
+.myBtn{
+    text-align: right;
+}
+.modal-dialog{
+    width: 800px;
+}
+#myTbody tr td{
+    text-align: center;
+}
+.myDelete{
+    cursor: pointer;
+    color: red;
+
+}
+.modal-footer{
+    height: 400px;
+}
+#myID{
+    padding-left: 0;
+}

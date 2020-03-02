@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>表单向导 - 五月七彩(Five Months Seven Color)后台管理系统</title>
+    <link rel="icon" href="../myImg/mytitle.jpg" type="image/ico">
+    <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+    <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+    <meta name="author" content="Five Months Seven Color Team">
+    <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../myCss/orderDetails.css">
+</head>
+
+<body>
+<div class="container-fluid p-t-15">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header"><h4>订单信息>订单列表>订单详情</h4></div>
+                <div class="card-body">
+                <div class="card-header" id="ddxx"><h4>订单信息</h4></div>
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <td class="words">商品名称</td>
+                            <td class="GoodName"></td>
+                            <td class="words">顾客姓名</td>
+                            <td class="CstmName"></td>
+                            <td class="words">订单状态</td>
+                            <td class="OrderState"></td>
+                            <td class="words">订单价格</td>
+                            <td class="OrderPrice"></td>
+                        </tr>
+                        <tr>
+                            <td class="words">商品ID</td>
+                            <td class="GoodId"></td>
+                            <td class="words">支付方式</td>
+                            <td class="PayWay"></td>
+                            <td class="words">快递费</td>
+                            <td class="KdPrice"></td>
+                            <td class="words">邮寄联系人</td>
+                            <td class="GetterName"></td>
+                        </tr>
+                        <tr>
+                            <td class="words">订单ID</td>
+                            <td class="OrderId"></td>
+                            <td class="words">创建时间</td>
+                            <td class="CreateTime"></td>
+                            <td class="words">快递公司</td>
+                            <td class="Kdcompany"></td>
+                            <td class="words">联系人手机</td>
+                            <td class="GetterPhone"></td>
+                        </tr>
+                        <tr>
+                            <td class="words">顾客账号</td>
+                            <td class="CstmId"></td>
+                            <td class="words">支付时间</td>
+                            <td class="PayTime"></td>
+                            <td class="words">寄送类型</td>
+                            <td class="SendType"></td>
+                            <td class="words">邮寄地址</td>
+                            <td class="Address"></td>
+                        </tr>
+                        <tr>
+                            <td class="words">顾客手机</td>
+                            <td class="CstmPhone"></td>
+                            <td class="words">发货时间</td>
+                            <td class="FhTime"></td>
+                            <td class="words">团单ID</td>
+                            <td class="GroupId"></td>
+                            <td class="words">快递号</td>
+                            <td class="KdId"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="card-header" id="hsxm"><h4>核算细明</h4></div>
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <td class="words">订单详情</td>
+                            <td>订单价格=商品价*数量+配送费-优惠券-退款-配送费退款</td>
+                            <td class="words">客人实付</td>
+                            <td class="OrderPrice"></td>
+                        </tr>
+                        <tr>
+                            <td class="words">应付供应商</td>
+                            <td>0元</td>
+                            <td class="words">优惠券抵用金额</td>
+                            <td>0元</td>
+                        </tr>
+                        <tr>
+                            <td class="words">支付流水号</td>
+                            <td class="OrderId"></td>
+                            <td class="words">支付交易号码</td>
+                            <td class="OrderId"></td>
+                        </tr>
+                        <tr>
+                            <td class="words">退款金额</td>
+                            <td class="ReturnPrice"></td>
+                            <td class="words">退款原因</td>
+                            <td class="ReturnReason"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-default btn-w-md" type="button" id="fh" onclick="back()">返回订单列表</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/main.min.js"></script>
+<!--向导插件-->
+<script type="text/javascript" src="../sysytem/js/jquery.bootstrap.wizard.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.guide-box').bootstrapWizard({
+            'tabClass': 'nav-step',
+            'nextSelector': '[data-wizard="next"]',
+            'previousSelector': '[data-wizard="prev"]',
+            'finishSelector': '[data-wizard="finish"]',
+            'onTabClick': function(e, t, i) {
+                if (!$('.guide-box').is('[data-navigateable="true"]')) return ! 1
+            },
+            'onTabShow': function(e, t, i) {
+                t.children(":gt(" + i + ").complete").removeClass("complete");
+                t.children(":lt(" + i + "):not(.complete)").addClass("complete");
+            },
+            'onFinish': function(e, t, i) {
+                // 点击完成后处理提交
+            }
+        });
+    });
+</script>
+<script src="../myJs/Order/date_Order.js"></script>
+<!--<script src="../date/dateItem.js"></script>-->
+<script src="../myJs/Order/orderDetails.js"></script>
+<!--<script src="../../js/bianjidingdan.js"></script>-->
+<script src="../myJs/Order/refundProcessing.js"></script>
+
+</body>
+</html>

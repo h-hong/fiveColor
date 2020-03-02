@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>商品列表 - 光年(Light Year Admin)后台管理系统模板</title>
+    <link rel="icon" href="../myImg/mytitle.jpg" type="image/ico">
+    <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+    <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+    <meta name="author" content="Five Months Seven Color Team">
+    <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+    <style>
+        .btn{
+            padding: 4px 8px;
+        }
+        #GoodsList th,td{
+            text-align: center;
+        }
+        #btn_add>a{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-fluid p-t-15">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header"><h4>商品筛选</h4></div>
+                <div class="card-body">
+                    <form action="#!" method="post" class="row">
+                        <div class="form-group col-md-6">
+                            <label for="title">商品ID</label>
+                            <input type="text" class="form-control" id="s_GoodId" name="title" value="" placeholder="请输入商品ID" />
+                        </div>
+
+
+                        <!--名称搜索采用模糊查询-->
+                        <div class="form-group col-md-6">
+                            <label for="title">商品名称</label>
+                            <input type="text" class="form-control" id="s_GoodName" name="title" value="" placeholder="请输入商品名称" />
+                        </div>
+
+
+                        <!--其他搜索-->
+                        <!--通过二级下拉列表框-->
+                        <div class="form-group col-md-6">
+                            <label for="type">其他搜索</label>
+                            <div class="form-controls">
+                                <select name="type" class="form-control" id="s_type">
+                                    <option value="none">--请选择查询类型--</option>
+                                    <option value="1">商品状态</option>
+                                    <option value="2">商品类型</option>
+                                    <option value="3">商品批次</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="type">对应属性</label>
+                            <div class="form-controls">
+                                <select name="type" class="form-control" id="s_attr">
+                                   <option value="none">--请选择对应属性--</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <button type="button" id="searchList" class="btn btn-primary ajax-post">搜 索</button>
+                            <button type="button" class="btn btn-default" onclick="javascript:history.back(-1);return false;">返 回</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>商品列表</h4>
+                    <div id="toolbar" class="toolbar-btn-action text-right">
+                        <button id="btn_add" type="button" class="btn btn-primary m-r-5">
+                            <a href="addGood.html">新增</a>
+                        </button>
+
+                        <button id="btn_deleteGood" type="button" class="btn btn-danger">
+                            删除
+                        </button>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!--<h5>响应式表格</h5>-->
+                    <div class="table-responsive">
+                        <table class="table" id="GoodsList">
+                            <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" id="selectAll" class="myCheckbox"/>
+                                </th>
+                                <th>类型</th>
+                                <th>封面</th>
+                                <th>ID</th>
+                                <th>名称</th>
+                                <th>供应商ID</th>
+                                <th>批次</th>
+                                <th>库存</th>
+                                <th>已售</th>
+                                <th>售价</th>
+                                <th>促销价</th>
+                                <th>成本</th>
+                                <th>新增时间</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/main.min.js"></script>
+<script src="../myJs/Goods/date_Goods.js"></script>
+<!--<script src="../date/dateItem.js"></script>-->
+<script src="../myJs/Goods/goodList.js"></script>
+<!--<script>
+    console.log(GoodsArray);
+    for (let i=0;i<GoodsArray.length;i++){
+        console.log(GoodsArray[i]);
+    }
+</script>-->
+</body>
+</html>

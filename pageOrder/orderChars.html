@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>修改密码 - 光年(Light Year Admin)后台管理系统模板</title>
+    <link rel="icon" href="../myImg/mytitle.jpg" type="image/ico">
+    <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+    <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+    <meta name="author" content="Five Months Seven Color Team">
+    <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">sysytem/
+                <h3>列表数据</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <select onchange="s()">
+                            <option value="0">昨日</option>
+                            <option value="1">今日</option>
+                            <option value="2">一周</option>
+                            <option value="3">一月</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-xs-12">
+                        <h5 style="color: #00acff">订单数据</h5>
+                        <p>个人订单：<span id="selfOrder"></span></p>
+                        <p>团购订单：<span id="groupOrder"></span></p>
+                    </div>
+                    <div class="col-lg-4 col-xs-12">
+                        <h5 style="color: #00acff">销售数据</h5>
+                        <p>盈利：<span id="earnMoney"></span></p>
+                        <p>收入：<span id="getMoney"></span></p>
+                        <p>支出：<span id="outMoney"></span></p>
+                    </div>
+                    <div class="col-lg-4 col-xs-12">
+                        <h5 style="color: #00acff">商品数据</h5>
+                        <p>水果：<span id="fruit"></span></p>
+                        <p>零食：<span id="littleEat"></span></p>
+                        <p>生活用品:<span id="dailyUse"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-lg-4 col-md-8" >
+            <div class="card" style="height: 400px" id="pie-sall">
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-8" >
+            <div class="card"  style="height: 400px" id="line-sall">
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-8" >
+            <div class="card" style="height: 400px" id="bar-sall">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../myJs/Order/date_Order.js"></script>
+<!--<script src="../date/dateItem.js"></script>-->
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/main.min.js"></script>
+<script type="text/javascript" src="../myJs/Order/eCharts.js"></script>
+<script type="text/javascript" src="../myJs/Order/orderChars.js"></script>
+</body>
+</html>

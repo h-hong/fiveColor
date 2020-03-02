@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>首页 - 五月七彩(Five Months Seven Color)后台管理系统</title>
+    <link rel="icon" href="../myImg/mytitle.jpg" type="image/ico">
+    <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+    <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+    <meta name="author" content="Five Months Seven Color Team">
+    <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../sysytem/css/animate.css" rel="stylesheet">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+    <link href="../sysytem/js/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../myCss/user_myInfo.css">
+    <!--模态框-->
+    <link rel="stylesheet" href="../myCss/user_modal.css">
+</head>
+<body>
+<div class="container-fluid p-t-15">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="edit-avatar adminHead">
+                        <div class="imgFile">
+                            <img src="" width="200px" height="200px" id="imgChange">
+                            <input type="file" id="file">
+                        </div>
+                        <div class="edit-avatar-content">
+                            <button id="myBtn" class="btn btn-default">修改头像</button>
+                            <p class="m-0">选择一张你喜欢的图片。</p>
+                        </div>
+                        <div>
+                            <h4 class="m-0" id="lv">超级管理员</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <form method="post" action="" class="site-form">
+                        <div class="form-group">
+                            <label for="userId">账号</label>
+                            <input type="text" class="form-control" name="userId" id="userId" value="" disabled="disabled">
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">姓名</label>
+                            <input type="text" class="form-control" name="userName" id="userName" value="">
+                        </div>
+                        <div class="form-group" id="userSex">
+                            <label for="man">男</label>
+                            <input type="radio" name="sex" id="man" value="男" checked>
+                            <label for="woman">女</label>
+                            <input type="radio" name="sex" id="woman" value="女">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">电话</label>
+                            <input type="tel" class="form-control" name="userPhone" id="phone" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="idCard">身份证</label>
+                            <input type="text" class="form-control" name="idCard" id="idCard" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" value="">
+                            <small id="emailHelp" class="form-text text-muted">请保证您填写的邮箱地址是正确的。</small>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="conserveMy">保存</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moda" id="yesModal">
+    <div class="modal-box modal-box1">
+        成功
+    </div>
+</div>sysytem/
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap-table/bootstrap-table.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+<script src="../myJs/Authority/date_Authority.js"></script>
+<!--<script src="../date/dateItem.js"></script>-->
+<script src="../myJs/Authority/myInfo.js"></script>
+</body>
+</html>

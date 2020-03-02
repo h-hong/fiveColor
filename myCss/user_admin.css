@@ -1,0 +1,88 @@
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #999;
+}
+.fr {
+    float: right;
+}
+.pos-r {
+    position: relative;
+    height: 31px;
+}
+.center {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.form-admin>div {
+    margin-bottom: 10px;
+}
+.form-admin input {
+    height: 38px;
+    width: 160px;
+    outline: none;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+table th,
+table tr{
+    text-align: center;
+}
+input[type="checkbox"] {
+    margin: 0 auto;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+/*正常*/
+.condition {
+    color: rgba(45, 142, 255, 0.71);
+    cursor: pointer;
+}
+/*修改*/
+.revise {
+    display: inline-block;
+    width: 40%;
+    margin-right: 10%;
+    text-align: center;
+    color: #ffffff;
+    background-color: #33cabb;
+    cursor: pointer;
+}
+/*删除*/
+.dele {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    color: #ffffff;
+    background-color: #f96868;
+    cursor: pointer;
+}
+/*分页*/
+.pager a:hover {
+    background-color: #33cabb !important;
+}
+
+.bgc {
+    background-color: #ff83d040;
+}
+ul,
+li {
+    list-style: none;
+}
+.cur {
+    cursor: pointer;
+}
+.cur:hover {
+    background-color: #dcdcdc;
+}
+#userP span{
+    display: inline-block;
+    width: 20%;
+}

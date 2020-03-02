@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>新增商品 - 光年(Light Year Admin)后台管理系统模板</title>
+    <link rel="icon" href="../myImg/mytitle.jpg" type="image/ico">
+    <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+    <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+    <meta name="author" content="Five Months Seven Color Team">
+    <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--标签插件-->
+    <link rel="stylesheet" href="../sysytem/js/jquery-tags-input/jquery.tagsinput.min.css">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+    <style>
+        #addCoverBtn,#addDetailBtn{
+            position: relative;
+        }
+        #addCoverBtn:before{
+            position: absolute;
+            left: 50%;
+        }
+        .addDetailBtn:before{
+            position: absolute;
+            left: 45%;
+        }
+        .addDetailBtn>input{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-fluid p-t-15">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header"><h4>基本信息</h4></div>
+                <div class="card-body">
+
+                    <form id="goodsItem" action="#" method="post" class="row">
+                        <div class="form-group col-md-6">
+                            <label for="GysName">供应商</label>
+                            <div class="form-controls">
+                                <select name="GysName" class="form-control" id="GysName">
+                                    <option value="none">--请选择供应商--</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="GoodType">商品类型</label>
+                            <div class="form-controls">
+                                <select name="GoodType" class="form-control" id="GoodType">
+                                    <option value="none">--请选择商品类型--</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="GoodID">商品ID</label>
+                            <div class="form-controls">
+                                <select name="GoodID" class="form-control" id="GoodID">
+                                    <option value="none">--请选择商品ID--</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="GoodName">商品名称</label>
+                            <input type="text" class="form-control" id="GoodName" name="GoodName" value=""
+                                   placeholder="商品名称待加载..." readonly/>
+                        </div>
+
+
+                        <div class="form-group col-md-6">
+                            <label for="GoodBatch">批次</label>
+                            <div class="form-controls">
+                                <select name="GoodBatch" class="form-control" id="GoodBatch">
+                                    <option value="none">--请选择商品批次--</option>
+                                    <option value="1">191010</option>
+                                    <option value="2">191011</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--<div class="form-group col-md-6">
+                            <label>&nbsp;</label><br><br>
+                            <small>*默认批次是当天*</small>
+                        </div>-->
+
+                        <!--新增商品状态：---还未发布，默认在*库存中*-->
+                        <!--<div class="form-group col-md-6">
+                            <label for="status">状态</label>
+                            <div class="clearfix">
+                                <label class="lyear-radio radio-inline radio-primary">
+                                    <input type="radio" name="status" value="0"><span>库存中</span>
+                                </label>
+                                <label class="lyear-radio radio-inline radio-primary">
+                                    <input type="radio" name="status" value="1" checked><span>启用</span>
+                                </label>
+                            </div>
+                        </div>-->
+
+                        <div class="form-group col-md-12">
+                            <label for="GoodDes">描述</label>
+                            <textarea class="form-control" id="GoodDes" name="GoodDes" rows="5" value=""
+                                      placeholder="描述"></textarea>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header"><h4>图片信息</h4></div>
+                <div class="card-body">
+                    <form id="goodsItem" class="row">
+                        <!--封面图-->
+                        <div class="form-group col-md-12">
+                            <label>上传封面</label>
+                            <div class="form-controls">
+                                <ul class="list-inline clearfix lyear-uploads-pic">
+                                    <li class="col-xs-12 col-sm-12 col-md-6">
+                                        <a class="pic-add" id="addCoverBtn"  title="点击上传">
+                                            <input type="file" id="" href="#" title="点击上传" style="opacity: 0">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--详情图片上传-->
+                        <div class="form-group col-md-12">
+                            <label>上传详情图</label>
+                            <div class="form-controls">
+                                <ul class="list-inline clearfix lyear-uploads-pic">
+                                    <!--<li class="col-xs-4 col-sm-3 col-md-2">
+                                        <figure>
+                                            <img src="../images/gallery/16.jpg" alt="图片二">
+                                            <figcaption>
+                                                <a class="btn btn-round btn-square btn-primary" href="#!"><i
+                                                        class="mdi mdi-eye"></i></a>
+                                                <a class="btn btn-round btn-square btn-danger" href="#!"><i
+                                                        class="mdi mdi-delete"></i></a>
+                                            </figcaption>
+                                        </figure>
+                                    </li>-->
+                                    <li class="col-xs-4 col-sm-3 col-md-2">
+                                        <a class="pic-add addDetailBtn" href="#!" title="点击上传">
+                                            <input type="file" id="" href="#" title="点击上传" style="opacity: 0">
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-4 col-sm-3 col-md-2">
+                                        <a class="pic-add addDetailBtn" href="#!" title="点击上传">
+                                            <input type="file" id="" href="#" title="点击上传" style="opacity: 0">
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-4 col-sm-3 col-md-2">
+                                        <a class="pic-add addDetailBtn" href="#!" title="点击上传">
+                                            <input type="file" id="" href="#" title="点击上传" style="opacity: 0">
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-4 col-sm-3 col-md-2">
+                                        <a class="pic-add addDetailBtn" href="#!" title="点击上传">
+                                            <input type="file" id="" href="#" title="点击上传" style="opacity: 0">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header"><h4>其他信息</h4></div>
+                <div class="card-body">
+                    <table class="table table-striped otherInfo">
+                        <thead>
+                        <tr>
+                            <th><label for="BuyNumber">新增数量</label></th>
+                            <th><label for="GoodPrice">售价</label></th>
+                            <th><label for="DiscountPrice">促销价</label></th>
+                            <th><label for="isDiscount">优惠券</label></th>
+                            <th><label for="CostPrice">成本价</label></th>
+                            <th><label for="KdPrice">快递费用</label></th>
+                            <!--<th><label for="GoodState"> 状态(默认)</label></th>-->
+                            <th><label for="GysId" >供应商ID</label></th>
+                            <th><label for="GysPhone" >联系方式</label></th>
+                            
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <!--应该判断我们添加的数量和供应商处的数量-->
+                                <input type="number" name="BuyNumber" id="BuyNumber">
+                            </td>
+                            <td>
+                                <input type="number" name="GoodPrice" id="GoodPrice">
+                            </td>
+                            <!--促销价有查询活动数组，判读这一类是否有活动，用售价进行计算-->
+                            <td>
+                                <input type="text" class="form-control" placeholder="-" name="DiscountPrice" id="DiscountPrice" readonly>
+                            </td>
+                            <!--优惠券查询优惠券数组-->
+                            <!--这里只说明商品是否有优惠券，但不显示，具体涉及哪些活动要点开商品详情查看-->
+                            <td>
+                                <input type="text" class="form-control" placeholder="-" name="isDiscount" id="isDiscount" readonly>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="-" name="CostPrice" id="CostPrice" readonly>
+                            </td>
+                            <td>
+                                <div class="form-controls">
+                                    <select name="KdPrice" class="form-control" id="KdPrice">
+                                        <option value="none">--请选择--    </option>
+                                        <option value="1">10</option>
+                                        <option value="2">15</option>
+                                    </select>
+                                </div>
+
+                            </td>
+                            <!--<td>
+                                <span class="label label-success" id="GoodState">
+                                    库存中
+                                </span>
+
+                            </td>-->
+                            <td>
+                                <input type="text" class="form-control" placeholder="-" name="GysId" id="GysId" readonly>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="-" name="GysPhone" id="GysPhone" readonly>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <form id="goodsItem" class="row">
+                        <div class="form-group col-md-12 text-right">
+                            <button type="button" class="btn btn-primary" id="addGood">确 定</button>
+                            <button type="button" class="btn btn-default"
+                                    onclick="javascript:history.back(-1);return false;">返 回
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+<!--标签插件-->
+<script src="../sysytem/js/jquery-tags-input/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/main.min.js"></script>
+
+<!--<script src="../date/dateItem.js"></script>-->
+<script src="../myJs/Goods/date_Goods.js"></script>
+<script src="../myJs/Goods/addGood.js"></script>
+
+
+</body>
+</html>

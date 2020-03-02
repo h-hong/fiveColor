@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>供应商列表 - 五月七彩(Five Months Seven Color)后台管理系统</title>
+    <link rel="icon" href="../myImg/mytitle.jpg" type="image/ico">
+    <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+    <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+    <meta name="author" content="Five Months Seven Color Team">
+    <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../myCss/supplier_GysList.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header"><h4>供应商管理 / 供应商列表</h4></div>
+                <div class="card-body">
+                    <div class="card_body_1">
+                        <!--<label class="bianma">供应商编码：<input type="text"></label>-->
+                        <!--<button class="cha">查询</button>-->
+                        <button class="addbtn zengjia btn-primary">添加</button>
+                    </div>
+                <table class="table text-center" id="GysListTable">
+                    <thead>
+                    <tr>
+                        <th>供应商编码</th>
+                        <th>供应商名称</th>
+                        <th>查看商品</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="4">
+
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+                <!--增加的模态框-->
+                <div class="modal addfade" id="addmodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <i>X</i>
+                                <h4>添加供应商信息 </h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="i1_box">
+                                    <div class="i1">供应商编码：<input type="text" id="GysId"></div>
+                                    <div class="i1">供应商名称：<input type="text" id="GysName"></div>
+                                    <div class="i1">&nbsp;&nbsp;&nbsp;公司地址：<input type="text" id="GysAdress"></div>
+                                    <div class="i1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系人：<input type="text" id="GysMan"></div>
+                                    <div class="i1">&nbsp;&nbsp;&nbsp;联系电话：<input type="text" id="GysPhone"></div>
+                                    <div class="i1">&nbsp;&nbsp;&nbsp;单位网址：<input type="text" id="GysNet"></div>
+                                    <div class="i1">&nbsp;&nbsp;&nbsp;商家类型：
+                                        <select id="GysType">
+                                            <option>批发</option>
+                                            <option>网上售卖</option>
+                                            <option>厂家直销</option>
+                                        </select>
+                                    </div>
+                                    <div class="in1">&nbsp;&nbsp;&nbsp;商品类型：
+                                        <input type="checkbox" value="水果" name="playaudio">水果
+                                        <input type="checkbox" value="蔬菜" name="playaudio">蔬菜
+                                        <input type="checkbox" value="海鲜" name="playaudio">海鲜
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="addbtn_ok1">确定</button>
+                                <button class="addbtn_no">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--修改的模态框-->
+                <div class="modal movefade movemodal" id="movemodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <i>X</i>
+                                <h4>修改信息</h4>
+                            </div>
+                            <div class="modal-body" id="editModal">
+                                <div class="i1_box">
+                                    <div class="i1">供应商编码：<input type="text" id="GysId2" readonly="true"></div>
+                                    <div class="i1">供应商名称：<input type="text" id="GysName2"></div>
+                                    <div class="i1">&nbsp;&nbsp;&nbsp;公司地址：<input type="text" id="GysAdress2"></div>
+                                    <div class="i1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系人：<input type="text" id="GysMan2"></div>
+                                    <div class="i1">&nbsp;&nbsp;&nbsp;联系电话：<input type="text" id="GysPhone2"></div>
+                                    <div class="i1">&nbsp;&nbsp;&nbsp;单位网址：<input type="text" id="GysNet2"></div>
+                                    <div class="i1">&nbsp;&nbsp;&nbsp;商家类型：
+                                        <select id="GysType2">
+                                            <option>批发</option>
+                                            <option>网上售卖</option>
+                                            <option>厂家直销</option>
+                                            <option value="">实体店</option>
+                                        </select>
+                                    </div>
+                                    <div class="in1">&nbsp;&nbsp;&nbsp;商品类型：
+                                        <input type="checkbox" value="水果" name="playaudio">水果
+                                        <input type="checkbox" value="蔬菜" name="playaudio">蔬菜
+                                        <input type="checkbox" value="海鲜" name="playaudio">海鲜
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="addbtn_ok2">确定</button>
+                                <button class="addbtn_no">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--查看的模态框-->
+                <div class="modal viewfade" id="viewmodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <i>X</i>
+                                <h4>查看供应商信息</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    供应商编码：<span></span>
+                                </p>
+                                <p>
+                                    供应商名称：<span></span>
+                                </p>
+                                <p>
+                                    公司地址：<span></span>
+                                </p>
+                                <p>
+                                    联系人：<span></span>
+                                </p>
+                                <p>
+                                    联系电话：<span></span>
+                                </p>
+                                <p>
+                                    公司网址：<span></span>
+                                </p>
+                                <p>
+                                    公司类型:<span></span>
+                                </p>
+                                <p id="splb">
+                                    商品类别：<span></span>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="addbtn_no">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+<!--标签插件-->
+<script src="../sysytem/js/jquery-tags-input/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/main.min.js"></script>
+<!--<script src="../date/dateItem.js"></script>-->
+<script src="../myJs/Suppiler/GoodList.js"></script>
+</body>
+</html>

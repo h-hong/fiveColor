@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>首页 - 五月七彩(Five Months Seven Color)后台管理系统-权限设置</title>
+    <link rel="icon" href="../myImg/mytitle.jpg" type="image/ico">
+    <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+    <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+    <meta name="author" content="Five Months Seven Color Team">
+    <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../sysytem/css/animate.css" rel="stylesheet">
+    <link href="../sysytem/css/style.min.css" rel="stylesheet">
+    <link href="../sysytem/js/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../myCss/user_setAdmin.css">
+    <!--模态框-->
+    <link rel="stylesheet" href="../myCss/user_modal.css">
+</head>
+<body>
+<div class="container-fluid p-t-15">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header"><h4>权限设置</h4></div>
+                <div class="card-body form-admin">
+                    <div class="clear">
+                        <select name="" id="seleLv">
+                            <option value="0">--选择权限列表--</option>
+                            <option value="1">--超级管理员--</option>
+                            <option value="2">--普通管理员--</option>
+                        </select>
+                        <div class="fr marginTop clear">
+                            <button id="add_set_add" type="button" class="btn btn-primary m-r-5 fr">
+                                新增
+                            </button>
+                            <input type="text" class="fr" id="addSteInput">
+                        </div>
+                    </div>
+                    <div class="card-body checkInput" id="setTab">
+                        <dl>
+                            <dt><input type="checkbox" />用户管理 <span>+</span></dt>
+                            <dd><input type="checkbox">添加</dd><dd><input type="checkbox">修改</dd>
+                        </dl>
+                        <dl>
+                            <dt><input type="checkbox">订单  <span>+</span></dt>
+                            <dd><input type="checkbox">退款</dd><dd><input type="checkbox">查询</dd><dd><input type="checkbox">取消订单</dd>
+                            <dd><input type="checkbox">修改地址</dd><dd><input type="checkbox">发货</dd>
+                        </dl>
+                        <dl>
+                            <dt><input type="checkbox">商品 <span>+</span></dt>
+                            <dd><input type="checkbox">新增</dd><dd><input type="checkbox">删除</dd><dd><input type="checkbox">库存设置</dd>
+                            <dd><input type="checkbox">上架</dd><dd><input type="checkbox">下架</dd>
+                        </dl>
+                        <dl>
+                            <dt><input type="checkbox">活动 <span>+</span></dt>
+                            <dd><input type="checkbox">创建</dd><dd><input type="checkbox">删除</dd><dd><input type="checkbox">设置</dd>
+                        </dl>
+                        <dl>
+                            <dt><input type="checkbox">优惠卷 <span>+</span></dt>
+                            <dd><input type="checkbox">创建</dd><dd><input type="checkbox">删除</dd><dd><input type="checkbox">发放</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-->
+<div class="moda" id="SetModal">
+    <div class="moda-box">
+        <div class="form">
+            <div>
+                <input type="text" style="width: 100%" id="DdModal"  value="">
+            </div>
+            <div>
+                <div><a id="trueDd">确定</a></div>
+                <div><a id="falseDd">取消</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moda" id="yesModal">
+    <div class="modal-box modal-box1">
+        添加成功
+    </div>
+</div>
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap-table/bootstrap-table.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+<script src="../myJs/Authority/date_Authority.js"></script>
+<!--<script src="../date/dateItem.js"></script>-->
+<script src="../myJs/Authority/setAdmin.js"></script>
+</body>
+</html>

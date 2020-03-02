@@ -1,0 +1,12 @@
+.form-label{
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+}
+/*.btn-position{*/
+    /*margin-left: 35%;*/
+/*}*/
+.tableSpan{
+    color: #449fdb;
+    cursor: pointer;
+}

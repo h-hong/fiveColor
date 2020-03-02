@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <title>优惠券详情列表 - 五月七彩(Five Months Seven Color)后台管理系统</title>
+  <!--<link rel="icon" href="images/title.png" type="image/ico">-->
+  <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+  <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+  <meta name="author" content="Five Months Seven Color Team">
+  <link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../sysytem/js/bootstrap-multitabs/multitabs.min.css">
+  <link href="../sysytem/css/style.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../myCss/couponDetailsList.css">
+</head>
+<body>
+<div class="container-fluid p-t-15">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div>
+          <h4>优惠券查询</h4>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label class="col-xs-4 myLeft">优惠券ID：</label>
+          <input id="YhqID" type="text" class="col-xs-8 myInput"  name="title" value="" placeholder="请填写优惠券ID" />
+        </div>
+        <div class="form-group col-md-4">
+          <label class="col-xs-4">优惠券名称：</label>
+          <input id="YhqName" type="text" class="col-xs-8 myInput"  name="title" value="" placeholder="请填写优惠券名称" />
+        </div>
+        <!--<div class="form-group col-md-4">-->
+          <!--<label class="col-xs-4 myLeft">优惠券类型</label>-->
+          <!--<div class="form-controls">-->
+            <!--<select name="type" class="col-xs-8 myInput" id="myCoupon">-->
+              <!--<option value="1">满减券</option>-->
+              <!--<option value="2">立减券</option>-->
+            <!--</select>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group col-md-6">-->
+          <!--<label class="col-xs-4">商品类型</label>-->
+          <!--<div class="form-controls">-->
+            <!--<select name="type" class="col-xs-8 myInput" id="myGoodType">-->
+              <!--<option value="1">全部商品</option>-->
+              <!--<option value="2">水果类</option>-->
+              <!--<option value="3">蔬菜类</option>-->
+            <!--</select>-->
+          <!--</div>-->
+        <!--</div>-->
+        <div class="col-md-4 myBtn">
+          <button class="btn btn-info btn-w-md" type="button" id="chaxun">查询</button>
+          <button class="btn btn-success btn-w-md" type="button" data-toggle="modal" data-target=".bs-example-modal-lg">新增优惠券</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h4>拼团详情列表</h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-bordered assembleTable">
+                <thead>
+                <tr>
+                  <th>优惠券ID</th>
+                  <th>优惠券名称</th>
+                  <th>优惠券类型</th>
+                  <th>商品类型</th>
+                  <th>剩余份数</th>
+                  <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="myTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button  class="btn btn-primary" id="queding">确定</button>
+      </div>
+      <div class="modal-footer">
+        <div class="form-group col-md-6">
+          <label class="col-xs-4">优惠券ID：</label>
+          <input id="add_1" type="text" class="col-xs-8 myInput" name="title" value="" placeholder="请填写优惠券ID" />
+        </div>
+        <div class="form-group col-md-6">
+          <label class="col-xs-4">优惠券名称：</label>
+          <input id="add_2" type="text" class="col-xs-8 myInput" id="title" name="title" value="" placeholder="请填写优惠券名称" />
+        </div>
+        <div class="form-group col-md-6">
+          <label class="col-xs-4">优惠券类型</label>
+          <div class="col-xs-8 myInput myLeft">
+            <select name="type" class="form-control" id="YhqType">
+              <option value="1">满减券</option>
+              <option value="2">立减券</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label class="col-xs-4">商品类型</label>
+          <div class="col-xs-8 myInput myLeft">
+            <select name="type" class="form-control" id="myGood">
+              <option value="1">全部商品</option>
+              <option value="2">水果类</option>
+              <option value="3">蔬菜类</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label class="col-xs-4">发放数量：</label>
+          <input id="add_3" type="text" class="col-xs-7 myInput"  name="title" value="" placeholder="请填写发放数量" />
+          <label class="col-xs-1">份</label>
+        </div>
+        <div class="form-group col-md-12">
+          <label class="titleLeft col-md-12">使用说明：</label>
+          <textarea class="form-control col-md-12" id="seo_description" name="seo_description" rows="5" value="" placeholder="请填写使用说明"></textarea>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label class="col-xs-4">有效日期：</label>
+            <div class="col-xs-8 myInput">
+              <div class="input-daterange input-group">
+                <input class="form-control js-datepicker" data-date-format="yyyy-mm-dd" type="text" id="example-daterange1" name="example-daterange1" placeholder="从">
+                <span class="input-group-addon"><i class="mdi mdi-chevron-right"></i></span>
+                <input class="form-control js-datepicker" data-date-format="yyyy-mm-dd" type="text" id="example-daterange2" name="example-daterange2" placeholder="至">
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label class="col-xs-4">用户类型：</label>
+            <div class="col-xs-8 myInput">
+              <select name="type" class="form-control">
+                <option value="1">新用户</option>
+                <option value="2">老用户</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label class="col-xs-6">每人限领：</label>
+            <div class="col-xs-6 myInput">
+              <select name="type" class="form-control">
+                <option value="1">1次</option>
+                <option value="2">2次</option>
+                <option value="2">3次</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label class="col-xs-8">有效天数（领取后当天生效）：</label>
+            <div class="col-xs-4 myInput">
+              <select name="type" class="form-control">
+                <option value="1">1天</option>
+                <option value="2">2天</option>
+                <option value="2">3天</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap-table/bootstrap-table.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+
+<!--行内编辑插件-->
+<link href="../sysytem/js/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.min.css" rel="stylesheet">
+<script type="text/javascript" src="../sysytem/js/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap-table/extensions/editable/bootstrap-table-editable.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/main.min.js"></script>
+<script src="../myJs/Activity/date_Activity.js"></script>
+<script src="../myJs/Activity/coupon.js"></script>
+<script>
+    $(".myDelete").click(function () {
+        $(this).parent().parent().remove()
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>登录页面 - 光年(Light Year Admin)后台管理系统模板</title>
+  <link rel="icon" href="../myImg/mytitle.jpg" type="image/ico">
+  <meta name="keywords" content="Five Months Seven Color,五月七彩,后台管理系统">
+  <meta name="description" content="Five Months Seven Color是一个基于Bootstrap的后台管理系统,稍有瑕疵，请多见谅。">
+  <meta name="author" content="Five Months Seven Color Team">
+<link href="../sysytem/css/bootstrap.min.css" rel="stylesheet">
+<link href="../sysytem/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="../sysytem/css/style.min.css" rel="stylesheet">
+<style>
+.lyear-wrapper {
+    position: relative;
+}
+.lyear-login {
+    display: flex !important;
+    min-height: 100vh;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.login-center {
+    background: #fff;
+    min-width: 38.25rem;
+    padding: 2.14286em 3.57143em;
+    border-radius: 5px;
+    margin: 2.85714em 0;
+}
+.login-header {
+    margin-bottom: 1.5rem !important;
+}
+.login-center .has-feedback.feedback-left .form-control {
+    padding-left: 38px;
+    padding-right: 12px;
+}
+.login-center .has-feedback.feedback-left .form-control-feedback {
+    left: 0;
+    right: auto;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    z-index: 4;
+    color: #dcdcdc;
+}
+.login-center .has-feedback.feedback-left.row .form-control-feedback {
+    left: 15px;
+}
+</style>
+</head>
+  
+<body>
+<div class="alert alert-danger" id="fail" role="alert" style="position: absolute;left: 30%;top: 100px;width: 40%;display: none;">账号或密码错误！</div>
+<div class="alert alert-success" id="success" role="alert" style="position: absolute;left: 30%;top: 100px;width: 40%;display: none;">登陆成功，即将跳转！</div>
+<div class="row lyear-wrapper">
+  <div class="lyear-login">
+    <div class="login-center">
+      <div class="login-header text-center">
+        <a href="../index.html"> <img alt="light year admin" src="../myImg/mylogo.png"> </a>
+      </div>
+      <form action="#!" method="post">
+        <div class="form-group has-feedback feedback-left">
+          <input type="text" placeholder="请输入您的用户名" class="form-control" name="username" id="username" />
+          <span class="mdi mdi-account form-control-feedback" aria-hidden="true"></span>
+        </div>
+        <div class="form-group has-feedback feedback-left">
+          <input type="password" placeholder="请输入密码" class="form-control" id="password" name="password" />
+          <span class="mdi mdi-lock form-control-feedback" aria-hidden="true"></span>
+        </div>
+        <div class="form-group has-feedback feedback-left row">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-block btn-primary seachA" type="button" onclick="checkMes()">立即登录</button>
+        </div>
+      </form>
+      <hr>
+      <footer class="col-sm-12 text-center">
+        <p class="m-b-0">Copyright © 2019 <a href="http://lyear.itshubao.com">五月七彩</a>. All right reserved</p>
+      </footer>
+    </div>
+  </div>
+</div>
+<script src="../myJs/Authority/date_Authority.js"></script>
+<!--<script type="text/javascript" src="../myJs/Order/date_Order.js"></script>-->
+<!--<script src="../date/dateItem.js"></script>-->
+<script type="text/javascript" src="../myJs/Order/login.js"></script>
+<script type="text/javascript" src="../sysytem/js/jquery.min.js"></script>
+<script type="text/javascript" src="../sysytem/js/bootstrap.min.js"></script>
+
+<!--<script type="text/javascript">;</script>-->
+</body>
+</html>

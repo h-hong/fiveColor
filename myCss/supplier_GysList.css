@@ -1,0 +1,222 @@
+*{margin: 0px; padding: 0px;}
+i{font-style: normal;}
+.container{
+    width: 900px;
+    margin: 50px auto;
+}
+.table{
+    width:100%;
+    border: 1px solid #DDDDDD;
+    text-align: center;
+    border-collapse: collapse;
+}
+td{
+    border: 1px solid #DDDDDD ;
+    height: 40px;
+
+}
+
+.addbtn{
+    width: 60px;
+    height: 30px;
+    border-radius: 4px;
+    /*background: #31708F;*/
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.delbtn{
+    width: 60px;
+    height: 25px;
+    border-radius: 4px;
+    /*background: #8a6d3b;*/
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.movebtn{
+    width: 60px;
+    height: 25px;
+    border-radius: 4px;
+    /*background: #843534;*/
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.chak{
+    width: 60px;
+    height: 25px;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.viewbtn{
+    width: 60px;
+    height: 25px;
+    border-radius: 4px;
+    /*background: #f0ad4e ;*/
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#addmodal{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+#viewmodal{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+#movemodal{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+.modal-dialog{
+    position: relative;
+    width: 500px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 5px;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.modal-header>i{
+    font-weight: bold;
+    color: #ADADAD;
+    float: right;
+    cursor: pointer;
+}
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+.modal-body input{
+    width: 300px;
+    border-radius: 4px;
+    border: 1px solid #DDDDDD;
+    outline: none;
+    padding: 10px;
+    margin: 10px;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+.addbtn_ok{
+    width: 40px;
+    height: 25px;
+    border-radius: 4px;
+    background: deepskyblue;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.addbtn_no{
+    width: 40px;
+    height: 25px;
+    border-radius: 4px;
+    background: darkslateblue;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.table_ thead tr th{
+    border: 1px solid black;
+    height: 40px;
+    background-color: #2e91b3;
+    /*color: black;*/
+}
+.table_ tbody tr th,
+.table_ tbody tr td{
+    border: 1px solid black;
+    color: black;
+}
+.in1 input{
+    /*border: 1px solid red;*/
+    width: 30px;
+}
+.bianma{
+    margin-left: 10%;
+}
+.cha{
+    margin-left: 10%;
+}
+.zengjia{
+    margin-left: 80%;
+}
+.xiu{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+
+.boder{
+    border: 1px solid black;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.card_body_1{
+    /*border-bottom: 1px solid #535353;*/
+    padding-bottom: 10px;
+    padding-left: 50px;
+    /*border: 1px solid red;*/
+    margin-bottom: 10px;
+}
+.ma{
+    margin:0 10%;
+}
+.ma1{
+    margin: 0 11%;
+}
+.maL{
+    margin-top: 20px;
+}
+.btn_l{
+    margin-left: 10%;
+}
+.btn_lr{
+    margin: 0 5%;
+}
+th{
+    text-align: center;
+}
+.card_body_2 table thead tr{
+    background-color: #2e91b3;
+    /*color: black;*/
+}
+.card .card-body{
+    padding: 24px 0;
+}
+.card_body_2>button{
+    margin-left: 85%;
+}
+.card-header {
+    border-bottom: 2px solid rgba(77,82,89,0.1);
+}
